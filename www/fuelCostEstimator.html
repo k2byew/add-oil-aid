@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <title>Estimate Fuel Cost</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bootstrap.min.css">
+
+  <script type = "text/javascript">
+  'use strict';
+   function estCost(){
+    var estKilometer = parseFloat(document.getElementById('estKilometer').value);
+    var costPerLiter = parseFloat(document.getElementById('costPerLiter').value);
+    var literPer100Km = parseFloat(document.getElementById('literPer100Km').value);
+    var estimatedCost = document.getElementById('estimatedCost');
+    estimatedCost.value = '$' + (literPer100Km / 100 * estKilometer * costPerLiter).toFixed(2);
+  }
+  </script>
+
+</head>
+<body>
+
+<div class="container">
+  <h3>Estimate Fuel Cost</h3>
+  <form role="form">
+
+    <div class="form-group">
+      <label for="estKilometer">Distance (Km)</label>
+      <input type="number" class="form-control" id="estKilometer">
+    </div>
+
+    <div class="form-group">
+      <label for="costPerLiter">Fuel Price ($/L)</label>
+      <input type="number" class="form-control" id="costPerLiter">
+    </div>
+
+    <div class="form-group">
+      <label for="literPer100Km">Fuel Efficiency (L/100Km)</label>
+      <input type="number" class="form-control" id="literPer100Km">
+    </div>
+
+    <div class="form-group">
+      <label for="estimatedCost">Estimated Cost ($)</label>
+      <input type="text" class="form-control" id="estimatedCost" readonly>
+    </div>
+
+    <br>
+
+    <div class="form-group">
+      <input type = "button" id="calc" class="btn btn-primary btn-lg btn-block" value = "Estimate" onclick = "estCost()" />
+      <br>
+      <a href="index.html" class="btn btn-info btn-lg btn-block">Calculate Fuel Efficiency</a>
+    </div>
+
+  </form>
+
+</div>
+</body></html>
