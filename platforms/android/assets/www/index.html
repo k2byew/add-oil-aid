@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <title>Calculate Fuel Efficiency</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bootstrap.min.css">
+
+  <script type = "text/javascript">
+  'use strict';
+  function L100Km(){
+    var kilometer = parseFloat(document.getElementById('totalKm').value);
+    var liter = parseFloat(document.getElementById('totalL').value);
+    var result = document.getElementById('LPer100Km');
+    result.value = (liter / kilometer * 100).toFixed(2);
+  }
+  </script>
+
+</head>
+<body>
+
+<div class="container">
+  <h3>Calculate Fuel Efficiency</h3>
+  <form role="form">
+
+    <div class="form-group">
+      <label for="totalKm">Distance Driven (Km)</label>
+      <input type="number" class="form-control" id="totalKm">
+    </div>
+
+    <div class="form-group">
+      <label for="totalL">Fuel Consumed (L)</label>
+      <input type="number" class="form-control" id="totalL">
+    </div>
+
+    <div class="form-group">
+      <label for="LPer100Km">Fuel Efficiency (L/100Km)</label>
+      <input type="text" class="form-control" id="LPer100Km" readonly>
+    </div>
+
+    <br><br><br><br><br>
+
+    <div class="form-group">
+      <input type = "button" id="calc" class="btn btn-primary btn-lg btn-block" value = "Calculate" onclick = "L100Km()" />
+      <br>
+      <a href="fuelCostEstimator.html" class="btn btn-info btn-lg btn-block">Fuel Cost Estimator</a>
+    </div>
+
+  </form>
+
+</div>
+</body></html>
