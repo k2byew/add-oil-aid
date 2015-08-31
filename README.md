@@ -12,3 +12,4 @@ Run on a debugging `device: cordova run android`
  - Add APK icon
  - Swipe to change screens
  - Other fuel consumption conversions eg. mpg
+ - Create css and js folder, and move js out of main html
